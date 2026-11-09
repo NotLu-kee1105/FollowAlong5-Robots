@@ -11,5 +11,22 @@ import mbot.*;
 
 @MBotLab(world = "parking")
 public class Stretch {
+    public static void main(String[] args) {
+        /* My Guess
+        Ada
+        True
+        False
+         */
+        Rover ada = new Rover("Ada");
+        System.out.println(ada);
+        System.out.println(ada.somethingAhead(500));
+        System.out.println(ada.somethingAhead(5));
+//B3
+        ada.driveToTape();
+        System.out.println("Found the tape");
+        ada.forward(30);
+        System.out.println(ada + " is parked");
+    }
+
 
 }

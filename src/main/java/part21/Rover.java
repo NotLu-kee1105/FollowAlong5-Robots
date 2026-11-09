@@ -29,6 +29,8 @@ public class Rover {
     // The sensor detects obstacles
     private Ultrasonic eyes;
 
+    private LineSensor floor;
+
     // Constructor
     // Runs when a Rover object is created
     public Rover(String name) {
@@ -40,9 +42,13 @@ public class Rover {
         // and store it in base
         this.base = new Chassis();
 
+        this.floor = new LineSensor(base);
+
         // Create a new Ultrasonic sensor
         // Pass the chassis into the sensor's constructor
         this.eyes = new Ultrasonic(base);
+
+
     }
 
     // Override the built-in toString() method
@@ -70,6 +76,17 @@ public class Rover {
             // Move forward 5 units
             base.straight(5);
         }
+    }
+    //B3
+    public void driveToTape() {
+
+        while (!floor.seesTape()) {
+            base.straight(2);
+        }
+
+    }
+    public void forward(double cm) {
+        base.straight(cm);
     }
 
 } // End of Rover class
