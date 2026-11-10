@@ -10,13 +10,31 @@ import mbot.*;
 //
 // SECTION B — COMMENTS: put a // comment ABOVE every line of code, in YOUR OWN WORDS.
 
+// Load the MBot world called "obstacles"
+// The robot will run in this simulation environment
 @MBotLab(world = "obstacles")
+
+// Create a class called ObstacleRun
 public class ObstacleRun {
+
+    // Main method - the program starts running here
     public static void main(String[] args) {
+
+        // Create a Rover object named rover
+        // Pass the name "Dash" into the Rover constructor
         Rover rover = new Rover("Dash");
+
+        // Print a message that the rover is ready
+        // Java automatically calls rover.toString()
+        System.out.println(rover + " is ready");
+
+        // Tell the rover to navigate through the obstacle course
+        // until it reaches its goal
         rover.reachGoal();
+
+        // Print a success message after the rover reaches the goal
+        // rover.toString() is called automatically again
         System.out.println(rover + " reached the goal");
     }
 
-
-}
+} // End of class
