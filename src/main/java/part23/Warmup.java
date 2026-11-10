@@ -17,5 +17,27 @@ import mbot.*;
 
 @MBotLab(world = "wall-ahead")
 public class Warmup {
+    public static void main(String[] args) {
+
+        // Make a chassis
+        Chassis base = new Chassis();
+
+        // Plug an ultrasonic sensor into the chassis
+        Ultrasonic eyes = new Ultrasonic(base);
+
+        // Count the number of 5 cm moves
+        int moves = 0;
+
+        // Keep moving while the wall is more than 20 cm away
+        while (eyes.distance() > 20) {
+            base.straight(5);
+            moves++;
+        }
+
+        // Print how many moves were made
+        System.out.println(moves);
+
+    }
 
 }
+
