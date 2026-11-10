@@ -16,5 +16,17 @@ import mbot.*;
 
 @MBotLab(world = "wall-ahead")
 public class Warmup {
+    public static void main(String[] args) {
+
+        // Make a chassis
+        Chassis base = new Chassis();
+
+        // Plug an ultrasonic sensor into the chassis
+        Ultrasonic eyes = new Ultrasonic(base);
+
+        // Print the distance the sensor reads
+        System.out.println(eyes.distance());
+
+    }
 
 }
