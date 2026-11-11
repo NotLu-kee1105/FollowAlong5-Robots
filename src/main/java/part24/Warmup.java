@@ -16,5 +16,23 @@ import mbot.*;
 
 @MBotLab(world = "wall-ahead")
 public class Warmup {
+    public static void main(String[] args) {
 
+        Tiny tiny = new Tiny();
+
+        tiny.look();
+
+    }
+}
+
+// Put this below the Warmup class
+class Tiny extends MBot2 {
+
+    Tiny() {
+        super();
+    }
+
+    void look() {
+        System.out.println(readUltrasonic());
+    }
 }
