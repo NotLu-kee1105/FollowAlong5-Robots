@@ -11,5 +11,17 @@ import mbot.*;
 
 @MBotLab(world = "open-room")
 public class Stretch {
-
+    /* MY GUESS:
+    Flash! Turning left
+    true
+    a.straight runs on Chasis and c runs on flashyBot
+     */
+    public static void main(String[] args) {
+        MBot2 a = new FlashyBot();
+        Chassis c = a;
+        a.straight(10);
+        c.turnLeft(90);
+        System.out.println(a == c);
+    }
+    //B1
 }

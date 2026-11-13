@@ -20,19 +20,36 @@ public class Mission {
     public static void mission(MBot2 bot) {
 
         // Print a starting message
-        System.out.println("Mission start");
+        System.out.println("Mission start: "+ bot);
 
         // Run the robot's run() method
         // Which version runs depends on the actual object
         bot.run();
 
         // Print a completion message
-        System.out.println("Mission done");
+        System.out.println("Mission done:"+ bot);
     }
 
     // Main method - program starts here
     public static void main(String[] args) {
+        /*
+It printed:
 
+Mission start: MBot2
+Mission done: MBot2
+
+because pick was 3, so the program created a regular MBot2 object:
+Shown in the if statement
+
+    bot = new MBot2();
+
+The CarefulBot and FlashyBot classes override toString(), but MBot2
+does not use those overrides. Since the actual object is an MBot2,
+Java calls MBot2's toString() method, which returns "MBot2".
+
+This demonstrates polymorphism because the version of toString()
+that runs depends on the actual object type, not the variable type.
+*/
         // Choose which robot to create
         int pick = 1;
 

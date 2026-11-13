@@ -16,6 +16,7 @@ import mbot.*;
 // Create a class called CarefulBot
 // CarefulBot inherits all MBot2 behavior
 public class CarefulBot extends MBot2 {
+    private int refused;
 
     // Constructor
     // Runs when a CarefulBot object is created
@@ -42,9 +43,12 @@ public class CarefulBot extends MBot2 {
 
             // Turn the LED red
             turnLedOn(1, 255, 0, 0);
+            //B1
+            refused++;
 
             // Print a warning message
             System.out.println(
+
                     "CarefulBot: not driving " +
                             cm +
                             " cm, too close"
@@ -64,6 +68,10 @@ public class CarefulBot extends MBot2 {
             // of straight(), not MBot2's
             straight(40);
         }
+    }
+    @Override
+    public String toString() {
+        return "CarefulBot (refused " + refused + " moves)";
     }
 
 }

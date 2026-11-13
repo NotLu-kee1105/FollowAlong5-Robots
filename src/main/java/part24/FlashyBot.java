@@ -12,6 +12,7 @@ import mbot.*;
 // Create a class called FlashyBot
 // FlashyBot inherits all behavior from MBot2
 public class FlashyBot extends MBot2 {
+    private int turns;
 
     // Constructor
     // Runs when a FlashyBot object is created
@@ -36,6 +37,8 @@ public class FlashyBot extends MBot2 {
 
         // Turn the LED off after the turn
         turnLedOff(1);
+
+        turns++;
     }
 
     // Override MBot2's turnRight method
@@ -53,6 +56,14 @@ public class FlashyBot extends MBot2 {
 
         // Turn the LED off after the turn
         turnLedOff(1);
+
+        //B2
+        turns++;
+    }
+    //B2
+    @Override
+    public String toString() {
+        return "FlashyBot (" + turns + " turns)";
     }
 
     // Override the run() method
